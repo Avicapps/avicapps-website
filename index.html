@@ -1,12 +1,14 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth" data-theme="dark">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AVICAPPS — Augmented Visual Intelligence</title>
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,13 +22,6 @@
       --surface: #161822;
       --text: #e6e7eb;
       --muted: #9aa0b3;
-    }
-
-    [data-theme="light"] {
-      --bg: #e9ebf2;
-      --surface: #f3f4f8;
-      --text: #0e0f14;
-      --muted: #4b5563;
     }
 
     body {
@@ -52,7 +47,7 @@
       border-top: 1px solid rgba(255,255,255,0.06);
     }
 
-    /* Pipeline colors */
+    /* Pipeline styling */
     .pipeline-time { color: #8b93ff; }
 
     .pipeline-status {
@@ -80,6 +75,8 @@
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
     <div class="flex items-center gap-3">
+      <!-- Logo placeholder -->
+      <!-- <img src="assets/logo.svg" class="w-9 h-9" alt="AVICAPPS logo"> -->
       <div class="w-9 h-9 rounded-lg flex items-center justify-center"
            style="background: linear-gradient(135deg,var(--primary),var(--secondary));">
         <span class="font-display font-bold text-black">A</span>
@@ -92,8 +89,8 @@
       <a href="#pipeline" class="hover:text-white">Pipeline</a>
       <a href="#collaboration" class="hover:text-white">Collaboration</a>
       <a href="#contact" class="hover:text-white">Contact</a>
-      <button onclick="toggleTheme()">☾☼</button>
     </div>
+
   </div>
 </nav>
 
@@ -249,13 +246,6 @@
 <footer class="py-12 divider text-center text-sm text-[var(--muted)]">
   © 2026 AVICAPPS · All rights reserved
 </footer>
-
-<script>
-  function toggleTheme() {
-    document.documentElement.dataset.theme =
-      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-  }
-</script>
 
 </body>
 </html>
