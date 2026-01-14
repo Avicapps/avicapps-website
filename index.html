@@ -5,23 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AVICAPPS — Augmented Visual Intelligence</title>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #5b6cff;
-      --secondary: #4cc9f0;
-
-      --bg: #0e0f14;
-      --surface: #161822;
-      --text: #e6e7eb;
-      --muted: #9aa0b3;
+      --primary:#5b6cff;
+      --secondary:#4cc9f0;
+      --bg:#0e0f14;
+      --surface:#161822;
+      --text:#e6e7eb;
+      --muted:#9aa0b3;
     }
 
     body {
@@ -30,41 +27,37 @@
       font-family: 'Inter', sans-serif;
     }
 
-    .font-display { font-family: 'Syne', sans-serif; }
+    .font-display { font-family:'Syne',sans-serif; }
 
     .accent {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
     .surface {
-      background: var(--surface);
-      border: 1px solid rgba(255,255,255,0.06);
+      background:var(--surface);
+      border:1px solid rgba(255,255,255,0.06);
     }
 
     .divider {
-      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top:1px solid rgba(255,255,255,0.06);
     }
 
-    /* Pipeline styling */
-    .pipeline-time { color: #8b93ff; }
+    .pipeline-time { color:#8b93ff; }
 
     .pipeline-status {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      display: inline-block;
+      font-size:0.75rem;
+      padding:.25rem .75rem;
+      border-radius:999px;
+      display:inline-block;
     }
 
-    .validation { background: rgba(91,108,255,.15); color:#5b6cff; }
-    .development { background: rgba(94,200,160,.15); color:#5ec8a0; }
-    .research { background: rgba(154,160,179,.15); color:#9aa0b3; }
+    .validation { background:rgba(91,108,255,.15); color:#5b6cff; }
+    .development { background:rgba(94,200,160,.15); color:#5ec8a0; }
+    .research { background:rgba(154,160,179,.15); color:#9aa0b3; }
 
-    /* Bullet styling */
-    .principles li::marker {
-      color: var(--primary);
-    }
+    .principles li::marker { color:var(--primary); }
   </style>
 </head>
 
@@ -72,18 +65,19 @@
 
 <!-- NAV -->
 <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-black/40 divider">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
 
     <div class="flex items-center gap-3">
-      <!-- Logo placeholder -->
-      <!-- <img src="assets/logo.svg" class="w-9 h-9" alt="AVICAPPS logo"> -->
-      <div class="w-9 h-9 rounded-lg flex items-center justify-center"
-           style="background: linear-gradient(135deg,var(--primary),var(--secondary));">
-        <span class="font-display font-bold text-black">A</span>
+      <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center"
+           style="background:linear-gradient(135deg,var(--primary),var(--secondary));">
+        <span class="font-display font-bold text-black text-sm sm:text-base">A</span>
       </div>
-      <span class="font-display font-semibold tracking-wide">AVICAPPS</span>
+      <span class="font-display font-semibold tracking-wide text-sm sm:text-base">
+        AVICAPPS
+      </span>
     </div>
 
+    <!-- Desktop nav -->
     <div class="hidden md:flex items-center gap-8 text-sm text-[var(--muted)]">
       <a href="#about" class="hover:text-white">Perspective</a>
       <a href="#pipeline" class="hover:text-white">Pipeline</a>
@@ -95,22 +89,22 @@
 </nav>
 
 <!-- HERO -->
-<section class="pt-32 pb-16">
-  <div class="max-w-5xl mx-auto px-6 text-center">
+<section class="pt-24 sm:pt-28 pb-12 sm:pb-16">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
 
-    <p class="text-sm text-[var(--muted)] mb-5">
+    <p class="text-xs sm:text-sm text-[var(--muted)] mb-4">
       A Global Company Founded in India
     </p>
 
-    <h1 class="font-display font-extrabold text-5xl md:text-7xl mb-5">
+    <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-7xl mb-4">
       <span class="accent">AVICAPPS</span>
     </h1>
 
-    <p class="tracking-widest text-sm text-[var(--muted)] mb-8">
+    <p class="tracking-widest text-[10px] sm:text-xs text-[var(--muted)] mb-6">
       AUGMENTED VISUAL INTELLIGENCE · CULT APPLICATIONS
     </p>
 
-    <p class="max-w-3xl mx-auto text-lg md:text-xl leading-relaxed text-[var(--muted)]">
+    <p class="max-w-3xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed text-[var(--muted)]">
       Uniting human creativity and computer intelligence to design systems that
       solve real-world problems and remain useful, understandable, and relevant over time.
     </p>
@@ -119,26 +113,26 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-20">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14">
+<section id="about" class="py-16 sm:py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 sm:gap-14">
 
     <div>
-      <h2 class="font-display text-4xl font-semibold mb-5">
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-4">
         A <span class="accent">Long-Horizon</span> Approach
       </h2>
 
-      <p class="text-lg text-[var(--muted)] leading-relaxed mb-5">
+      <p class="text-base sm:text-lg text-[var(--muted)] leading-relaxed mb-4">
         AVICAPPS is built around a simple conviction: intelligence becomes meaningful
         only when it augments human judgment instead of replacing it.
       </p>
 
-      <p class="text-lg text-[var(--muted)] leading-relaxed">
+      <p class="text-base sm:text-lg text-[var(--muted)] leading-relaxed">
         Structural integrity precedes visibility in all our work.
       </p>
     </div>
 
-    <div class="surface rounded-2xl p-6">
-      <ul class="principles space-y-3 text-base">
+    <div class="surface rounded-xl sm:rounded-2xl p-5 sm:p-6">
+      <ul class="principles space-y-2 sm:space-y-3 text-sm sm:text-base">
         <li>🔹 Augmentation over automation</li>
         <li>🔹 Cognition before optimization</li>
         <li>🔹 Systems thinking, not feature thinking</li>
@@ -150,9 +144,9 @@
 </section>
 
 <!-- PIPELINE -->
-<section id="pipeline" class="py-24 bg-black/20">
-  <div class="max-w-6xl mx-auto px-6 mb-14">
-    <h2 class="font-display text-4xl font-bold mb-3">
+<section id="pipeline" class="py-20 sm:py-24 bg-black/20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold mb-2">
       Internal <span class="accent">Pipeline</span>
     </h2>
     <p class="text-sm text-[var(--muted)] max-w-xl">
@@ -160,39 +154,40 @@
     </p>
   </div>
 
-  <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 grid gap-4 sm:gap-6 md:grid-cols-2">
 
-    <div class="surface rounded-xl p-6">
-      <h3 class="font-display text-xl mb-1">MT1</h3>
-      <p class="text-sm text-[var(--muted)] mb-3">Structural productivity systems</p>
+    <!-- Cards unchanged content, tighter padding -->
+    <div class="surface rounded-xl p-5 sm:p-6">
+      <h3 class="font-display text-lg sm:text-xl mb-1">MT1</h3>
+      <p class="text-sm text-[var(--muted)] mb-2">Structural productivity systems</p>
       <p class="text-xs pipeline-time mb-1">Phase 1 — Late Feb 2026</p>
-      <p class="text-xs pipeline-time mb-3">Phase 2 — Mid May 2026</p>
+      <p class="text-xs pipeline-time mb-2">Phase 2 — Mid May 2026</p>
       <span class="pipeline-status validation">Stability & Validation</span>
     </div>
 
-    <div class="surface rounded-xl p-6">
-      <h3 class="font-display text-xl mb-1">MT2</h3>
-      <p class="text-sm text-[var(--muted)] mb-3">Foundations before entrepreneurship</p>
-      <p class="text-xs pipeline-time mb-3">Aug – Sep 2026</p>
+    <div class="surface rounded-xl p-5 sm:p-6">
+      <h3 class="font-display text-lg sm:text-xl mb-1">MT2</h3>
+      <p class="text-sm text-[var(--muted)] mb-2">Foundations before entrepreneurship</p>
+      <p class="text-xs pipeline-time mb-2">Aug – Sep 2026</p>
       <span class="pipeline-status development">Controlled Development</span>
     </div>
 
-    <div class="surface rounded-xl p-6">
-      <h3 class="font-display text-xl mb-1">M24</h3>
-      <p class="text-sm text-[var(--muted)] mb-3">Reducing creative friction</p>
-      <p class="text-xs pipeline-time mb-3">October 2027</p>
+    <div class="surface rounded-xl p-5 sm:p-6">
+      <h3 class="font-display text-lg sm:text-xl mb-1">M24</h3>
+      <p class="text-sm text-[var(--muted)] mb-2">Reducing creative friction</p>
+      <p class="text-xs pipeline-time mb-2">October 2027</p>
       <span class="pipeline-status research">Research Ongoing</span>
     </div>
 
-    <div class="surface rounded-xl p-6">
-      <h3 class="font-display text-xl mb-1">M3H0</h3>
-      <p class="text-sm text-[var(--muted)] mb-3">Energy systems & intelligence</p>
-      <p class="text-xs pipeline-time mb-3">Early 2028</p>
+    <div class="surface rounded-xl p-5 sm:p-6">
+      <h3 class="font-display text-lg sm:text-xl mb-1">M3H0</h3>
+      <p class="text-sm text-[var(--muted)] mb-2">Energy systems & intelligence</p>
+      <p class="text-xs pipeline-time mb-2">Early 2028</p>
       <span class="pipeline-status research">Research & Structuring</span>
     </div>
 
   </div>
-</section>
+</section></section>
 
 <!-- COLLABORATION -->
 <section id="collaboration" class="py-24">
@@ -227,27 +222,25 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="py-24 bg-black/30">
-  <div class="max-w-xl mx-auto px-6 text-center">
-    <h2 class="font-display text-4xl font-semibold mb-6">
+<section id="contact" class="py-20 sm:py-24 bg-black/30">
+  <div class="max-w-xl mx-auto px-4 sm:px-6 text-center">
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-4">
       Engage With <span class="accent">AVICAPPS</span>
     </h2>
-    <p class="text-lg text-[var(--muted)] mb-8">
+    <p class="text-base sm:text-lg text-[var(--muted)] mb-6">
       For collaboration or long-horizon system development.
     </p>
     <a href="mailto:hello@avicapps.com"
-       class="inline-block px-8 py-4 rounded-full font-semibold text-black"
-       style="background: linear-gradient(135deg,var(--primary),var(--secondary));">
+       class="inline-block px-7 py-3 rounded-full font-semibold text-black"
+       style="background:linear-gradient(135deg,var(--primary),var(--secondary));">
       hello@avicapps.com
     </a>
   </div>
 </section>
 
-<footer class="py-12 divider text-center text-sm text-[var(--muted)]">
+<footer class="py-8 divider text-center text-xs sm:text-sm text-[var(--muted)]">
   © 2026 AVICAPPS · All rights reserved
 </footer>
 
 </body>
 </html>
-
-
