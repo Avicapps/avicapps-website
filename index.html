@@ -1,129 +1,96 @@
-<!doctype html>
-<html lang="en" data-theme="dark">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AVICAPPS — Augmented Visual Intelligence</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AVICAPPS</title>
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="brand">
-      <img 
-  src="assets/avicapps-logo.svg" 
-  alt="AVICAPPS logo" 
-  class="logo"
-/>
-      <span class="brand-name">AVICAPPS</span>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-name">AVICAPPS</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#perspective">Perspective</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#collaboration">Collaboration</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="nav-links">
-      <a href="#about">Perspective</a>
-      <a href="#pipeline">Pipeline</a>
-      <a href="#collaboration">Collaboration</a>
-      <a href="#contact">Contact</a>
-    </div>
+  <!-- ================= MAIN ================= -->
+  <main class="container">
 
-    <button id="themeToggle" aria-label="Toggle theme">☀︎</button>
-  </div>
-</nav>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>AVICAPPS</h1>
+      <p class="tagline">
+        AUGMENTED VISUAL INTELLIGENCE · CULT APPLICATIONS
+      </p>
+      <p class="intro">
+        Uniting human creativity and computer intelligence to design systems
+        that remain useful, understandable, and relevant over time.
+      </p>
+    </section>
 
-<!-- HERO -->
-<section class="hero">
-  <p class="meta">A Global Company Founded in India</p>
-  <h1 class="display accent">AVICAPPS</h1>
-  <p class="tagline">AUGMENTED VISUAL INTELLIGENCE · CULT APPLICATIONS</p>
-  <p class="intro">
-    Uniting human creativity and computer intelligence to design systems
-    that remain useful, understandable, and relevant over time.
-  </p>
-</section>
+    <!-- PHILOSOPHY -->
+    <section id="perspective">
+      <h2>A Long-Horizon Approach</h2>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="grid">
-    <div>
-      <h2>A <span class="accent">Long-Horizon</span> Approach</h2>
-      <p>AVICAPPS is built around a simple conviction: intelligence becomes meaningful only when it augments human judgment instead of replacing it.</p>
-      <p>We favor systems over shortcuts, clarity over abstraction, and coherence over immediacy.</p>
-    </div>
-    <div class="card">
+      <p>
+        AVICAPPS is built around a simple conviction: intelligence becomes
+        meaningful only when it augments human judgment instead of replacing it.
+      </p>
+
+      <p>
+        We favor systems over shortcuts, clarity over abstraction, and coherence
+        over immediacy.
+      </p>
+
       <ul>
         <li>Augmentation over automation</li>
         <li>Cognition before optimization</li>
         <li>Systems thinking</li>
         <li>Time as a design constraint</li>
       </ul>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- PIPELINE -->
-<section id="pipeline" class="section subtle">
-  <h2>Internal <span class="accent">Pipeline</span></h2>
-  <p class="muted center">
-    Product names are internal identifiers. Details are revealed only when systems are structurally complete.
-  </p>
+    <!-- PIPELINE -->
+    <section id="pipeline">
+      <h2>Internal Pipeline</h2>
 
-  <div class="cards">
-    <div class="card"><h3>MT1</h3><p>Structural productivity systems</p><span>Feb–May 2026</span></div>
-    <div class="card"><h3>MT2</h3><p>Foundations before entrepreneurship</p><span>Jul–Aug 2026</span></div>
-    <div class="card"><h3>M24</h3><p>Reducing creative friction</p><span>2027</span></div>
-    <div class="card"><h3>M3H0</h3><p>Energy systems & intelligence</p><span>Early 2028</span></div>
-  </div>
-</section>
-
-<!-- COLLAB -->
-<section id="collaboration" class="section">
-  <div class="grid">
-    <div>
-      <h2>Working <span class="accent">Together</span></h2>
-      <p>
-        AVICAPPS collaborates selectively with teams building serious,
-        long-horizon software systems.
-      </p>
-    </div>
-    <div class="card">
       <p class="muted">
-        We engage where discipline, clarity, and structural thinking matter
-        more than speed or visibility.
+        Product names are internal identifiers. Details are revealed only when
+        systems are structurally complete.
       </p>
-    </div>
-  </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact" class="section subtle center">
-  <h2>Engage With <span class="accent">AVICAPPS</span></h2>
-  <p class="muted">For collaboration or long-term system development.</p>
-  <a class="cta" href="mailto:hello@avicapps.com">hello@avicapps.com</a>
-</section>
+      <div class="pipeline-item">
+        <h3>MT1</h3>
+        <p>Structural productivity systems</p>
+        <span class="date">Feb – May 2026</span>
+      </div>
 
-<footer class="footer">
-  © 2026 AVICAPPS · All rights reserved
-</footer>
+      <div class="pipeline-item">
+        <h3>MT2</h3>
+        <p>Foundations before entrepreneurship</p>
+        <span class="date">2027</span>
+      </div>
+    </section>
 
-<script>
-  const toggle = document.getElementById('themeToggle');
-  const root = document.documentElement;
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
+      <p>© AVICAPPS · Founded in India</p>
+    </footer>
 
-  toggle.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    toggle.textContent = next === 'dark' ? '☀︎' : '☾';
-  });
-</script>
+  </main>
 
 </body>
 </html>
