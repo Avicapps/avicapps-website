@@ -1,0 +1,155 @@
+:root {
+  --primary: #5b6cff;
+  --secondary: #4cc9f0;
+}
+
+/* DARK */
+[data-theme="dark"] {
+  --bg: #0e0f14;
+  --surface: #161822;
+  --text: #e6e7eb;
+  --muted: #9aa0b3;
+}
+
+/* LIGHT */
+[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #f3f4f8;
+  --text: #111111;
+  --muted: #555555;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Syne', sans-serif;
+}
+
+.accent {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  .logo {
+  height: 36px;
+  width: auto;
+}
+
+  
+.nav-links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+#themeToggle {
+  margin-left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 8rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.section {
+  padding: 6rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.subtle {
+  background: rgba(0,0,0,0.15);
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  background: linear-gradient(135deg,var(--primary),var(--secondary));
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
