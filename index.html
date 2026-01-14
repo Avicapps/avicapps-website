@@ -1,33 +1,32 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AVICAPPS — Augmented Visual Intelligence</title>
 
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts (Google – refined, professional) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
+      --primary: #5b6cff;
+      --secondary: #4cc9f0;
+
       --bg: #0e0f14;
       --surface: #161822;
       --text: #e6e7eb;
       --muted: #9aa0b3;
-      --primary: #5b6cff;
-      --secondary: #4cc9f0;
     }
 
     [data-theme="light"] {
-      --bg: #f6f7fb;
-      --surface: #ffffff;
+      --bg: #e9ebf2;
+      --surface: #f3f4f8;
       --text: #0e0f14;
-      --muted: #5c6175;
+      --muted: #4b5563;
     }
 
     body {
@@ -36,9 +35,7 @@
       font-family: 'Inter', sans-serif;
     }
 
-    .font-display {
-      font-family: 'Syne', sans-serif;
-    }
+    .font-display { font-family: 'Syne', sans-serif; }
 
     .accent {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -54,97 +51,101 @@
     .divider {
       border-top: 1px solid rgba(255,255,255,0.06);
     }
+
+    /* Pipeline colors */
+    .pipeline-time { color: #8b93ff; }
+
+    .pipeline-status {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .validation { background: rgba(91,108,255,.15); color:#5b6cff; }
+    .development { background: rgba(94,200,160,.15); color:#5ec8a0; }
+    .research { background: rgba(154,160,179,.15); color:#9aa0b3; }
+
+    /* Bullet styling */
+    .principles li::marker {
+      color: var(--primary);
+    }
   </style>
 </head>
 
-<body data-theme="dark">
+<body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-black/40 divider">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-    <!-- Brand -->
     <div class="flex items-center gap-3">
-      <!-- LOGO PLACEHOLDER (replace src later) -->
-      <!-- <img src="assets/logo.svg" class="w-9 h-9" alt="AVICAPPS logo"> -->
-
       <div class="w-9 h-9 rounded-lg flex items-center justify-center"
            style="background: linear-gradient(135deg,var(--primary),var(--secondary));">
         <span class="font-display font-bold text-black">A</span>
       </div>
-
       <span class="font-display font-semibold tracking-wide">AVICAPPS</span>
     </div>
 
-    <!-- Nav Links -->
     <div class="hidden md:flex items-center gap-8 text-sm text-[var(--muted)]">
       <a href="#about" class="hover:text-white">Perspective</a>
       <a href="#pipeline" class="hover:text-white">Pipeline</a>
       <a href="#collaboration" class="hover:text-white">Collaboration</a>
       <a href="#contact" class="hover:text-white">Contact</a>
-
-      <!-- Theme Toggle -->
-      <button onclick="toggleTheme()" class="ml-2 opacity-70 hover:opacity-100">
-        🌗
-      </button>
+      <button onclick="toggleTheme()">☾☼</button>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="min-h-screen flex items-start pt-32">
+<section class="pt-32 pb-16">
   <div class="max-w-5xl mx-auto px-6 text-center">
 
-    <p class="text-sm text-[var(--muted)] mb-6">
+    <p class="text-sm text-[var(--muted)] mb-5">
       A Global Company Founded in India
     </p>
 
-    <h1 class="font-display font-extrabold text-5xl md:text-7xl mb-6">
+    <h1 class="font-display font-extrabold text-5xl md:text-7xl mb-5">
       <span class="accent">AVICAPPS</span>
     </h1>
 
-    <p class="tracking-widest text-sm text-[var(--muted)] mb-10">
+    <p class="tracking-widest text-sm text-[var(--muted)] mb-8">
       AUGMENTED VISUAL INTELLIGENCE · CULT APPLICATIONS
     </p>
 
-    <p class="max-w-3xl mx-auto text-lg md:text-xl text-[var(--muted)] leading-relaxed">
-      Uniting human creativity and computer intelligence to design systems
-      that remain useful, understandable, and relevant over time.
+    <p class="max-w-3xl mx-auto text-lg md:text-xl leading-relaxed text-[var(--muted)]">
+      Uniting human creativity and computer intelligence to design systems that
+      solve real-world problems and remain useful, understandable, and relevant over time.
     </p>
+
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-24">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+<section id="about" class="py-20">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14">
 
     <div>
-      <h2 class="font-display text-4xl font-semibold mb-6">
+      <h2 class="font-display text-4xl font-semibold mb-5">
         A <span class="accent">Long-Horizon</span> Approach
       </h2>
 
-      <p class="text-[var(--muted)] leading-relaxed mb-6">
-        AVICAPPS is built around a simple conviction: intelligence becomes
-        meaningful only when it augments human judgment instead of replacing it.
+      <p class="text-lg text-[var(--muted)] leading-relaxed mb-5">
+        AVICAPPS is built around a simple conviction: intelligence becomes meaningful
+        only when it augments human judgment instead of replacing it.
       </p>
 
-      <p class="text-[var(--muted)] leading-relaxed mb-6">
-        We favor systems over shortcuts, clarity over abstraction, and
-        long-term coherence over immediacy.
-      </p>
-
-      <p class="text-[var(--muted)] leading-relaxed">
-        We develop deliberately, reveal selectively, and publish only when
-        systems are structurally complete.
+      <p class="text-lg text-[var(--muted)] leading-relaxed">
+        Structural integrity precedes visibility in all our work.
       </p>
     </div>
 
     <div class="surface rounded-2xl p-6">
-      <ul class="space-y-4 text-sm">
-        <li>• Augmentation over automation</li>
-        <li>• Cognition before optimization</li>
-        <li>• Systems thinking</li>
-        <li>• Time as a design constraint</li>
+      <ul class="principles space-y-3 text-base">
+        <li>Augmentation over automation</li>
+        <li>Cognition before optimization</li>
+        <li>Systems thinking, not feature thinking</li>
+        <li>Time as a design constraint</li>
       </ul>
     </div>
 
@@ -153,11 +154,11 @@
 
 <!-- PIPELINE -->
 <section id="pipeline" class="py-24 bg-black/20">
-  <div class="max-w-6xl mx-auto px-6 text-center mb-16">
-    <h2 class="font-display text-4xl font-bold mb-4">
+  <div class="max-w-6xl mx-auto px-6 mb-14">
+    <h2 class="font-display text-4xl font-bold mb-3">
       Internal <span class="accent">Pipeline</span>
     </h2>
-    <p class="text-sm text-[var(--muted)] max-w-xl mx-auto">
+    <p class="text-sm text-[var(--muted)] max-w-xl">
       Details are disclosed intentionally and revealed only when systems are ready.
     </p>
   </div>
@@ -165,27 +166,64 @@
   <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-6">
 
     <div class="surface rounded-xl p-6">
-      <h3 class="font-display font-semibold text-xl mb-2">MT1</h3>
-      <p class="text-sm text-[var(--muted)] mb-2">Structural productivity systems</p>
-      <p class="text-xs text-[var(--muted)]">Feb – May 2026</p>
+      <h3 class="font-display text-xl mb-1">MT1</h3>
+      <p class="text-sm text-[var(--muted)] mb-3">Structural productivity systems</p>
+      <p class="text-xs pipeline-time mb-1">Phase 1 — Late Feb 2026</p>
+      <p class="text-xs pipeline-time mb-3">Phase 2 — Mid May 2026</p>
+      <span class="pipeline-status validation">Stability & Validation</span>
     </div>
 
     <div class="surface rounded-xl p-6">
-      <h3 class="font-display font-semibold text-xl mb-2">MT2</h3>
-      <p class="text-sm text-[var(--muted)] mb-2">Foundations before entrepreneurship</p>
-      <p class="text-xs text-[var(--muted)]">Jun – Aug 2026</p>
+      <h3 class="font-display text-xl mb-1">MT2</h3>
+      <p class="text-sm text-[var(--muted)] mb-3">Foundations before entrepreneurship</p>
+      <p class="text-xs pipeline-time mb-3">Aug – Sep 2026</p>
+      <span class="pipeline-status development">Controlled Development</span>
     </div>
 
     <div class="surface rounded-xl p-6">
-      <h3 class="font-display font-semibold text-xl mb-2">M24</h3>
-      <p class="text-sm text-[var(--muted)] mb-2">Reducing creative friction</p>
-      <p class="text-xs text-[var(--muted)]">2027</p>
+      <h3 class="font-display text-xl mb-1">M24</h3>
+      <p class="text-sm text-[var(--muted)] mb-3">Reducing creative friction</p>
+      <p class="text-xs pipeline-time mb-3">October 2027</p>
+      <span class="pipeline-status research">Research Ongoing</span>
     </div>
 
     <div class="surface rounded-xl p-6">
-      <h3 class="font-display font-semibold text-xl mb-2">M3H0</h3>
-      <p class="text-sm text-[var(--muted)] mb-2">Energy systems & intelligence</p>
-      <p class="text-xs text-[var(--muted)]">Early 2028</p>
+      <h3 class="font-display text-xl mb-1">M3H0</h3>
+      <p class="text-sm text-[var(--muted)] mb-3">Energy systems & intelligence</p>
+      <p class="text-xs pipeline-time mb-3">Early 2028</p>
+      <span class="pipeline-status research">Research & Structuring</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- COLLABORATION -->
+<section id="collaboration" class="py-24">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14">
+
+    <div>
+      <h2 class="font-display text-4xl font-semibold mb-5">
+        We <span class="accent">Architect</span> for You
+      </h2>
+
+      <p class="text-lg text-[var(--muted)] leading-relaxed mb-5">
+        AVICAPPS collaborates selectively with founders and teams to transform
+        strong ideas into secure, scalable, high-performance applications.
+      </p>
+
+      <p class="text-lg text-[var(--muted)] leading-relaxed">
+        We engage where architecture is treated as a long-term strategic decision,
+        not a short-term implementation task.
+      </p>
+    </div>
+
+    <div class="surface rounded-2xl p-6">
+      <ul class="space-y-3 text-base text-[var(--muted)]">
+        <li>• System architecture & technology selection</li>
+        <li>• Security-first design and threat modeling</li>
+        <li>• Performance, reliability & scalability planning</li>
+        <li>• Long-term maintainability strategy</li>
+      </ul>
     </div>
 
   </div>
@@ -197,10 +235,9 @@
     <h2 class="font-display text-4xl font-semibold mb-6">
       Engage With <span class="accent">AVICAPPS</span>
     </h2>
-    <p class="text-[var(--muted)] mb-8">
+    <p class="text-lg text-[var(--muted)] mb-8">
       For collaboration or long-horizon system development.
     </p>
-
     <a href="mailto:hello@avicapps.com"
        class="inline-block px-8 py-4 rounded-full font-semibold text-black"
        style="background: linear-gradient(135deg,var(--primary),var(--secondary));">
@@ -215,8 +252,8 @@
 
 <script>
   function toggleTheme() {
-    const body = document.body;
-    body.dataset.theme = body.dataset.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme =
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
   }
 </script>
 
