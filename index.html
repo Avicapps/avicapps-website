@@ -1,97 +1,281 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="h-full scroll-smooth" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AVICAPPS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AVICAPPS — Augmented Visual Intelligence</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- THEME + BASE STYLES -->
+  <style>
+    :root {
+      --primary: #5b6cff;
+      --secondary: #4cc9f0;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #0e0f14;
+      --surface: #161822;
+      --text: #e6e7eb;
+      --muted: #9aa0b3;
+    }
+
+    html[data-theme="light"] {
+      --bg: #ffffff;
+      --surface: #f3f4f8;
+      --text: #0e0f14;
+      --muted: #555b6e;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', sans-serif;
+      transition: background-color .25s ease, color .25s ease;
+    }
+
+    .font-display { font-family: 'Syne', sans-serif; }
+    .font-sub { font-family: 'Playfair Display', serif; letter-spacing: -0.01em; }
+
+    .accent {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .surface {
+      background: var(--surface);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .soft-divider {
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .lift {
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .lift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+    }
+  </style>
 </head>
 
-<body>
+<body class="h-full">
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="brand">
-        <span class="brand-name">AVICAPPS</span>
+<!-- NAV -->
+<nav class="fixed top-0 inset-x-0 z-50 backdrop-blur soft-divider"
+     style="background: color-mix(in srgb, var(--bg) 85%, transparent);">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- Brand -->
+    <div class="flex items-center gap-3">
+      <!-- Logo placeholder (replace later with SVG) -->
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center"
+           style="background: linear-gradient(135deg,var(--primary),var(--secondary));">
+        <span class="font-display font-bold text-black">A</span>
+      </div>
+      <span class="font-display font-semibold tracking-wide">AVICAPPS</span>
+    </div>
+
+    <!-- Nav links + toggle -->
+    <div class="flex items-center gap-6 text-sm text-[var(--muted)]">
+      <div class="hidden md:flex gap-8">
+        <a href="#about" class="hover:text-[var(--text)]">Perspective</a>
+        <a href="#pipeline" class="hover:text-[var(--text)]">Pipeline</a>
+        <a href="#collaboration" class="hover:text-[var(--text)]">Collaboration</a>
+        <a href="#contact" class="hover:text-[var(--text)]">Contact</a>
       </div>
 
-      <nav class="nav">
-        <a href="#perspective">Perspective</a>
-        <a href="#pipeline">Pipeline</a>
-        <a href="#collaboration">Collaboration</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <button id="themeToggle"
+              class="ml-2 text-lg hover:text-[var(--text)]"
+              aria-label="Toggle theme">
+        ◐
+      </button>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <!-- ================= MAIN ================= -->
-  <main class="container">
+<!-- HERO -->
+<section class="min-h-screen flex items-center pt-24">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <p class="text-sm text-[var(--muted)] mb-6">
+      A Global Company Founded in India
+    </p>
 
-    <!-- HERO -->
-    <section class="hero">
-      <h1>AVICAPPS</h1>
-      <p class="tagline">
-        AUGMENTED VISUAL INTELLIGENCE · CULT APPLICATIONS
-      </p>
-      <p class="intro">
-        Uniting human creativity and computer intelligence to design systems
-        that remain useful, understandable, and relevant over time.
-      </p>
-    </section>
+    <h1 class="font-display font-extrabold text-5xl md:text-7xl mb-6">
+      <span class="accent">AVICAPPS</span>
+    </h1>
 
-    <!-- PHILOSOPHY -->
-    <section id="perspective">
-      <h2>A Long-Horizon Approach</h2>
+    <p class="tracking-widest text-sm text-[var(--muted)] mb-8">
+      AUGMENTED VISUAL INTELLIGENCE · CULT APPLICATIONS
+    </p>
 
-      <p>
+    <p class="max-w-2xl mx-auto text-lg text-[var(--muted)]">
+      Uniting human creativity and computer intelligence to design systems
+      that remain useful, understandable, and relevant over time.
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+    <div>
+      <h2 class="font-sub text-4xl font-semibold mb-6">
+        A <span class="accent">Long-Horizon</span> Approach
+      </h2>
+
+      <p class="text-[var(--muted)] leading-relaxed mb-6">
         AVICAPPS is built around a simple conviction: intelligence becomes
         meaningful only when it augments human judgment instead of replacing it.
       </p>
 
-      <p>
-        We favor systems over shortcuts, clarity over abstraction, and coherence
-        over immediacy.
+      <p class="text-[var(--muted)] leading-relaxed mb-6">
+        We favor systems over shortcuts, clarity over abstraction,
+        and long-term coherence over immediacy.
       </p>
 
-      <ul>
-        <li>Augmentation over automation</li>
-        <li>Cognition before optimization</li>
-        <li>Systems thinking</li>
-        <li>Time as a design constraint</li>
-      </ul>
-    </section>
-
-    <!-- PIPELINE -->
-    <section id="pipeline">
-      <h2>Internal Pipeline</h2>
-
-      <p class="muted">
-        Product names are internal identifiers. Details are revealed only when
+      <p class="text-[var(--muted)] leading-relaxed">
+        We develop deliberately, reveal selectively, and publish only when
         systems are structurally complete.
       </p>
+    </div>
 
-      <div class="pipeline-item">
-        <h3>MT1</h3>
-        <p>Structural productivity systems</p>
-        <span class="date">Feb – May 2026</span>
-      </div>
+    <div class="surface rounded-2xl p-8">
+      <ul class="space-y-6 text-sm">
+        <li>• Augmentation over automation</li>
+        <li>• Cognition before optimization</li>
+        <li>• Systems thinking</li>
+        <li>• Time as a design constraint</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-      <div class="pipeline-item">
-        <h3>MT2</h3>
-        <p>Foundations before entrepreneurship</p>
-        <span class="date">2027</span>
-      </div>
-    </section>
+<!-- PIPELINE -->
+<section id="pipeline" class="py-24 bg-black/10">
+  <div class="max-w-6xl mx-auto px-6 text-center mb-16">
+    <h2 class="font-display text-4xl font-bold mb-4">
+      Internal <span class="accent">Pipeline</span>
+    </h2>
+    <p class="text-sm text-[var(--muted)] max-w-xl mx-auto">
+      Product names are internal identifiers.
+      Details are disclosed intentionally and revealed only when systems are ready.
+    </p>
+  </div>
 
-    <!-- FOOTER -->
-    <footer id="contact" class="footer">
-      <p>© AVICAPPS · Founded in India</p>
-    </footer>
+  <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-6">
 
-  </main>
+  <div class="surface rounded-xl p-6 lift">
+    <h3 class="font-display font-semibold text-xl mb-2">MT1</h3>
+    <p class="text-sm text-[var(--muted)] mb-3">
+      Addressing structural gaps in the productivity landscape.
+    </p>
+    <p class="text-xs text-[var(--muted)]">Feb–May 2026</p>
+  </div>
+
+  <div class="surface rounded-xl p-6 lift">
+    <h3 class="font-display font-semibold text-xl mb-2">MT2</h3>
+    <p class="text-sm text-[var(--muted)] mb-3">
+      Exploring foundations that precede entrepreneurial thinking.
+    </p>
+    <p class="text-xs text-[var(--muted)]">Jul–Aug 2026</p>
+  </div>
+
+  <div class="surface rounded-xl p-6 lift">
+    <h3 class="font-display font-semibold text-xl mb-2">M24</h3>
+    <p class="text-sm text-[var(--muted)] mb-3">
+      Creating systems that reduce creative friction and boosts creative work flow.
+    </p>
+    <p class="text-xs text-[var(--muted)]">2027</p>
+  </div>
+
+  <div class="surface rounded-xl p-6 lift">
+    <h3 class="font-display font-semibold text-xl mb-2">M3H0</h3>
+    <p class="text-sm text-[var(--muted)] mb-3">
+      Energy systems viewed through augmented intelligence.
+    </p>
+    <p class="text-xs text-[var(--muted)]">Early 2028</p>
+  </div>
+
+</div>
+
+
+<!-- COLLABORATION -->
+<section id="collaboration" class="py-24">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+    <div>
+      <h2 class="font-sub text-4xl font-semibold mb-6">
+        Working <span class="accent">Together</span>
+      </h2>
+      <p class="text-[var(--muted)] leading-relaxed">
+        AVICAPPS collaborates selectively with teams building
+        serious, long-horizon systems.
+      </p>
+    </div>
+
+    <div class="surface rounded-2xl p-8">
+      <p class="text-sm text-[var(--muted)]">
+        We engage where clarity, discipline, and structure matter more
+        than speed or visibility.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 bg-black/10">
+  <div class="max-w-xl mx-auto px-6 text-center">
+    <h2 class="font-sub text-4xl font-semibold mb-6">
+      Engage With <span class="accent">AVICAPPS</span>
+    </h2>
+    <p class="text-[var(--muted)] mb-8">
+      For collaboration or long-term system development.
+    </p>
+    <a href="mailto:hello@avicapps.com"
+       class="inline-block px-8 py-4 rounded-full font-semibold text-black"
+       style="background: linear-gradient(135deg,var(--primary),var(--secondary));">
+      hello@avicapps.com
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-12 soft-divider text-center text-sm text-[var(--muted)]">
+  © 2026 AVICAPPS · All rights reserved
+</footer>
+
+<!-- THEME TOGGLE SCRIPT -->
+<script>
+  (function () {
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    // Dark is default unless user previously chose otherwise
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      root.setAttribute('data-theme', savedTheme);
+    }
+
+    toggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  })();
+</script>
+
 
 </body>
 </html>
-
